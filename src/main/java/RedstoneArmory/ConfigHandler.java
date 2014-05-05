@@ -1,17 +1,16 @@
 package RedstoneArmory;
 
-import java.io.File;
-
 import net.minecraftforge.common.config.Configuration;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class ConfigHandler {
-	
-	public static void init(File file) {
-		Configuration config = new Configuration(file);	
+
+	public static void create(FMLPreInitializationEvent event) {
+		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
-		
+
 		config.save();
-		
+
 	}
-	
+
 }

@@ -1,24 +1,21 @@
 package RedstoneArmory.items;
 
-import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemPickaxe;
 import net.minecraft.util.IIcon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemEnderiumFluxedPickaxe extends Item {
-	private IIcon activeIcon;
-	
-	public ItemEnderiumFluxedPickaxe(int id) {
+public class ItemEnderiumFluxedPickaxe extends ItemPickaxe {
+	protected ItemEnderiumFluxedPickaxe(ToolMaterial material) {
+		super(material);
 		setCreativeTab(RedstoneArmory.RedstoneArmory.tabRedstoneArmory);
-		setMaxDamage(0);
-		setMaxStackSize(1);
 		setUnlocalizedName(ItemInfo.EFP_UNLOCALIZED_NAME);
-		
 	}
-	
+
+	@SuppressWarnings("unused")
+	private IIcon activeIcon;
+
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerIcons(IIconRegister iconRegister) {

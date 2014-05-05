@@ -1,17 +1,16 @@
 package RedstoneArmory.items;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import cpw.mods.fml.common.registry.GameRegistry;
 
+public class ItemRegistry {
 
-public class Items {
-	
 	public static Item enderiumFluxedPickaxe;
-	
+
 	public static void init() {
-		enderiumFluxedPickaxe = new ItemEnderiumFluxedPickaxe(ItemInfo.EFP_ID);
+		enderiumFluxedPickaxe = new ItemEnderiumFluxedPickaxe(ToolMaterial.EMERALD);
 		GameRegistry.registerItem(enderiumFluxedPickaxe, ItemInfo.EFP_KEY);
-		
 	}
 
 }

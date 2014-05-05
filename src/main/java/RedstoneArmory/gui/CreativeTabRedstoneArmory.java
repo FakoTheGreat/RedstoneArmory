@@ -3,7 +3,7 @@ package RedstoneArmory.gui;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import RedstoneArmory.items.Items;
+import RedstoneArmory.items.ItemRegistry;
 
 public class CreativeTabRedstoneArmory extends CreativeTabs {
 
@@ -12,13 +12,13 @@ public class CreativeTabRedstoneArmory extends CreativeTabs {
 	}
 
 	@Override
-    public ItemStack getIconItemStack() {
-        return new ItemStack(Items.enderiumFluxedPickaxe, 1, 0);
-    }
+	public ItemStack getIconItemStack() {
+		return new ItemStack(ItemRegistry.enderiumFluxedPickaxe, 1, 0);
+	}
 
 	@Override
 	public Item getTabIconItem() {
-		return Items.enderiumFluxedPickaxe;
+		return ItemRegistry.enderiumFluxedPickaxe;
 	}
 
 }
