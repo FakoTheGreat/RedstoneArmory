@@ -26,6 +26,9 @@ public class ItemInfo {
 	public static final String EFWRENCH_KEY = "enderiumFluxedWrench";
 	public static final String EFWRENCH_UNLOCALIZED_NAME = "redstonearmory.enderiumFluxedWrench";
 	
+	public static final String EFROD_KEY = "enderiumFluxedRod";
+	public static final String EFROD_UNLOCALIZED_NAME = "redstonearmory.enderiumFluxedRod";
+	
 	// ARMOR INFORMATION
 	// COMING SOON(TM)
 	
@@ -57,6 +60,13 @@ public class ItemInfo {
 	public static final String EFWRENCH_ICON = "enderiumFluxedWrench";
 	public static final String EFWRENCH_ACTIVE_ICON = "enderiumFluxedWrench_Active";
 	public static final String EFWRENCH_DRAINED_ICON = "enderiumFluxedWrench_Drained";
+	
+	public static final String EFROD_UNCAST_ICON = "enderiumFluxedRod_Uncast";
+	public static final String EFROD_UNCAST_ACTIVE_ICON = "enderiumFluxedRod_Uncast_Active";
+	public static final String EFROD_UNCAST_DRAINED_ICON = "enderiumFluxedRod_Uncast_Drained";
+	public static final String EFROD_CAST_ICON = "enderiumFluxedRod_Cast";
+	public static final String EFROD_CAST_ACTIVE_ICON = "enderiumFluxedRod_Cast_Active";
+	public static final String EFROD_CAST_DRAINED_ICON = "enderiumFluxedRod_Cast_Drained";
 	
 	// ARMOR ICONS
 	// COMING SOON(TM)
