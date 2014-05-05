@@ -10,5 +10,6 @@ public class ItemInfo {
 	
 	public static final String EFP_ICON = "enderiumFluxedPickaxe";
 	public static final String EFP_ACTIVE_ICON = "enderiumFluxedPickaxe_Active";
+	public static final String EFP_DRAINED_ICON = "enderiumFluxedPickaxe_Drained";
 	
 }

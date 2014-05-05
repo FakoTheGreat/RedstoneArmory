@@ -25,6 +25,7 @@ public class ItemEnderiumFluxedPickaxe extends ItemPickaxe implements IEnergyCon
 
 	@SuppressWarnings("unused")
 	private IIcon activeIcon;
+	private IIcon drainedIcon;
 	public int capacity = 20000;
 	public int cost = 200;
 	public int transferLimit = 1000;
@@ -40,6 +41,16 @@ public class ItemEnderiumFluxedPickaxe extends ItemPickaxe implements IEnergyCon
 	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.EFP_ICON);
 		this.activeIcon = iconRegister.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.EFP_ACTIVE_ICON);
+		this.drainedIcon = iconRegister.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.EFP_DRAINED_ICON);
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public IIcon getIconFromEnergy(int energy, ItemStack container) {
+		if (getEnergyStored(container) == 0 ) {
+			return drainedIcon;
+		}else{
+			return itemIcon;
+		}
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -143,7 +154,9 @@ public class ItemEnderiumFluxedPickaxe extends ItemPickaxe implements IEnergyCon
 		if (getEnergyStored(container) < getUsedEnergy(container))
 			return 0.5F;
 		else
+			//return int to specify dig speed
 			return super.getDigSpeed(container, block, meta);
+
 	}
 
 	@Override
