@@ -1,4 +1,4 @@
-package RedstoneArmory;
+package RedstoneArmory.util;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;

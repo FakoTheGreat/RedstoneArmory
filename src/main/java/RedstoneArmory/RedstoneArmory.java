@@ -30,7 +30,7 @@ public class RedstoneArmory {
 		proxy.initSounds();
 		ItemRegistry.init();
 
-		System.out.println("[InsertTimeHere] [RedstoneArmory] PreInitialization phase completed.");
+		System.out.println("[RedstoneArmory] PreInitialization phase completed.");
 
 	}
 
