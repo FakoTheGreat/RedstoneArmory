@@ -3,3 +3,9 @@ itemGroup.redstoneArmory.creativeTab=Redstone Armory
 
 //Items
 item.redstonearmory.enderiumFluxedPickaxe.name=Enderium Fluxed Pickaxe
+item.redstonearmory.enderiumFluxedAxe.name=Enderium Fluxed Axe
+item.redstonearmory.enderiumFluxedShovel.name=Enderium Fluxed Shovel
+item.redstonearmory.enderiumFluxedSword.name=Enderium Fluxed Sword
+item.redstonearmory.enderiumFluxedSickle.name=Enderium Fluxed Sickle
+item.redstonearmory.enderiumFluxedWrench.name=Enderium Fluxed Wrench
+item.redstonearmory.enderiumFluxedBattleWrench.name=Enderium Fluxed BattleWrench
