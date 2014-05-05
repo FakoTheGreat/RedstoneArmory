@@ -43,12 +43,12 @@ public class ItemEnderiumFluxedPickaxe extends ItemPickaxe implements IEnergyCon
 		this.activeIcon = iconRegister.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.EFP_ACTIVE_ICON);
 		this.drainedIcon = iconRegister.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.EFP_DRAINED_ICON);
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public IIcon getIconFromEnergy(int energy, ItemStack container) {
-		if (getEnergyStored(container) == 0 ) {
+		if (getEnergyStored(container) == 0) {
 			return drainedIcon;
-		}else{
+		} else {
 			return itemIcon;
 		}
 	}
@@ -68,7 +68,7 @@ public class ItemEnderiumFluxedPickaxe extends ItemPickaxe implements IEnergyCon
 			RFHelper.setDefaultEnergyTag(container, 0);
 
 		if (GuiScreen.isShiftKeyDown())
-			list.add("Charge: " + RFHelper.getEnergyStored(container));
+			list.add("Charge: " + RFHelper.getRFStored(container));
 	}
 
 	@Override
@@ -81,46 +81,22 @@ public class ItemEnderiumFluxedPickaxe extends ItemPickaxe implements IEnergyCon
 		if (container.stackTagCompound == null)
 			RFHelper.setDefaultEnergyTag(container, 0);
 
-		return (this.capacity + 1 - RFHelper.getEnergyStored(container));
+		return (this.capacity + 1 - RFHelper.getRFStored(container));
 	}
 
 	@Override
 	public int receiveEnergy(ItemStack container, int maxReceive, boolean simulate) {
-		if (container.stackTagCompound == null)
-			RFHelper.setDefaultEnergyTag(container, 0);
-
-		int energy = RFHelper.getEnergyStored(container);
-		int add = Math.min(maxReceive, Math.min(this.capacity - energy, this.transferLimit));
-
-		if (!simulate) {
-			energy += add;
-			RFHelper.setEnergy(container, energy);
-		}
-
-		return add;
+		return RFHelper.receiveEnergy(container, maxReceive, simulate, this.capacity, this.transferLimit);
 	}
 
 	@Override
 	public int extractEnergy(ItemStack container, int maxExtract, boolean simulate) {
-		if (container.stackTagCompound == null)
-			RFHelper.setDefaultEnergyTag(container, 0);
-
-		int energy = RFHelper.getEnergyStored(container);
-		int remove = Math.min(maxExtract, energy);
-
-		if (!simulate) {
-			energy -= remove;
-			RFHelper.setEnergy(container, energy);
-		}
-		return remove;
+		return RFHelper.extractEnergy(container, maxExtract, simulate);
 	}
 
 	@Override
 	public int getEnergyStored(ItemStack container) {
-		if (container.stackTagCompound == null)
-			RFHelper.setDefaultEnergyTag(container, 0);
-
-		return RFHelper.getEnergyStored(container);
+		return RFHelper.getRFStored(container);
 	}
 
 	@Override
@@ -154,7 +130,7 @@ public class ItemEnderiumFluxedPickaxe extends ItemPickaxe implements IEnergyCon
 		if (getEnergyStored(container) < getUsedEnergy(container))
 			return 0.5F;
 		else
-			//return int to specify dig speed
+			// return int to specify dig speed
 			return super.getDigSpeed(container, block, meta);
 
 	}
