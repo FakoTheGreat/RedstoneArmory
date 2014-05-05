@@ -3,7 +3,6 @@ package RedstoneArmory.items.tools;
 import java.util.List;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
@@ -17,6 +16,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import RedstoneArmory.items.ItemInfo;
+import RedstoneArmory.util.KeyboardHelper;
 import RedstoneArmory.util.RFHelper;
 import cofh.api.energy.IEnergyContainerItem;
 import cpw.mods.fml.relauncher.Side;
@@ -69,8 +69,8 @@ public class ItemEnderiumFluxedPickaxe extends ItemPickaxe implements IEnergyCon
 		if (container.stackTagCompound == null)
 			RFHelper.setDefaultEnergyTag(container, 0);
 
-		if (GuiScreen.isShiftKeyDown())
-			list.add("Charge: " + RFHelper.getRFStored(container));
+		if (KeyboardHelper.isShiftDown())
+			list.add("Charge: " + RFHelper.getRFStored(container) + "/" + capacity + " RF");
 	}
 
 	@Override
