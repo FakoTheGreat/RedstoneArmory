@@ -69,13 +69,19 @@ public class ItemEnderiumFluxedAxe extends ItemAxe implements IEnergyContainerIt
 		if (container.stackTagCompound == null)
 			RFHelper.setDefaultEnergyTag(container, 0);
 
+		list.add(RFHelper.moreInfo);
+
 		if (KeyboardHelper.isShiftDown())
-			list.add("Charge: " + RFHelper.getRFStored(container) + "/" + capacity + " RF");
+			list.add("Charge: " + RFHelper.yellowItalics + RFHelper.getRFStored(container) + "/" + capacity + " RF");
 	}
 
 	@Override
 	public int getMaxDamage(ItemStack container) {
 		return this.capacity + 1;
+	}
+
+	public boolean showDurabilityBar(ItemStack stack) {
+		return true;
 	}
 
 	@Override
@@ -114,11 +120,11 @@ public class ItemEnderiumFluxedAxe extends ItemAxe implements IEnergyContainerIt
 	public int useEnergy(ItemStack container, boolean simulate) {
 		int unbreaking = EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, container);
 		return extractEnergy(container, (this.cost - (unbreaking * 10)), simulate);
-//		if (PLACEEMPOWEREDTHINGHERE == false) {
-//			return extractEnergy(container, (this.cost - (unbreaking * 10)), simulate);
-//		} else {
-//			return extractEnergy(container, (this.empoweredCost - (unbreaking * 10)), simulate);
-//		}
+		// if (PLACEEMPOWEREDTHINGHERE == false) {
+		// return extractEnergy(container, (this.cost - (unbreaking * 10)), simulate);
+		// } else {
+		// return extractEnergy(container, (this.empoweredCost - (unbreaking * 10)), simulate);
+		// }
 	}
 
 	public int getUsedEnergy(ItemStack container) {

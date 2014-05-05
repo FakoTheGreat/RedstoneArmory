@@ -69,8 +69,10 @@ public class ItemEnderiumFluxedPickaxe extends ItemPickaxe implements IEnergyCon
 		if (container.stackTagCompound == null)
 			RFHelper.setDefaultEnergyTag(container, 0);
 
+		list.add(RFHelper.moreInfo);
+
 		if (KeyboardHelper.isShiftDown())
-			list.add("Charge: " + RFHelper.getRFStored(container) + "/" + capacity + " RF");
+			list.add("Charge: " + RFHelper.yellowItalics + RFHelper.getRFStored(container) + "/" + capacity + " RF");
 	}
 
 	@Override

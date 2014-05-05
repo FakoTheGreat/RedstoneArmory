@@ -5,6 +5,9 @@ import net.minecraft.nbt.NBTTagCompound;
 
 public class RFHelper {
 
+	public static String moreInfo = "§2§oPress Shift for more information";
+	public static String yellowItalics = "§e§o";
+
 	public static ItemStack setDefaultEnergyTag(ItemStack container, int energy) {
 		container.setTagCompound(new NBTTagCompound());
 		container.stackTagCompound.setInteger("Energy", energy);
@@ -56,5 +59,4 @@ public class RFHelper {
 
 		return getRFStored(container);
 	}
-
 }
