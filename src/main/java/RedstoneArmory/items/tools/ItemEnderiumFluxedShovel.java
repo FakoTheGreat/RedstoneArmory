@@ -11,7 +11,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.IIcon;
@@ -22,7 +22,7 @@ import cofh.api.energy.IEnergyContainerItem;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemEnderiumFluxedPickaxe extends ItemPickaxe implements IEnergyContainerItem {
+public class ItemEnderiumFluxedShovel extends ItemSpade implements IEnergyContainerItem {
 
 	@SuppressWarnings("unused")
 	private IIcon activeIcon;
@@ -32,18 +32,18 @@ public class ItemEnderiumFluxedPickaxe extends ItemPickaxe implements IEnergyCon
 	public int empoweredCost = 600;
 	public int transferLimit = 1000;
 
-	public ItemEnderiumFluxedPickaxe(ToolMaterial material) {
+	public ItemEnderiumFluxedShovel(ToolMaterial material) {
 		super(material);
 		setCreativeTab(RedstoneArmory.RedstoneArmory.tabRedstoneArmory);
-		setUnlocalizedName(ItemInfo.EFPICKAXE_UNLOCALIZED_NAME);
+		setUnlocalizedName(ItemInfo.EFSHOVEL_UNLOCALIZED_NAME);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerIcons(IIconRegister iconRegister) {
-		this.itemIcon = iconRegister.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.EFPICKAXE_ICON);
-		this.activeIcon = iconRegister.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.EFPICKAXE_ACTIVE_ICON);
-		this.drainedIcon = iconRegister.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.EFPICKAXE_DRAINED_ICON);
+		this.itemIcon = iconRegister.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.EFSHOVEL_ICON);
+		this.activeIcon = iconRegister.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.EFSHOVEL_ACTIVE_ICON);
+		this.drainedIcon = iconRegister.registerIcon(ItemInfo.TEXTURE_LOCATION + ":" + ItemInfo.EFSHOVEL_DRAINED_ICON);
 	}
 
 	@SideOnly(Side.CLIENT)
