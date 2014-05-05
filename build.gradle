@@ -22,7 +22,7 @@ group= "info.tehnut.eirairc" // http://maven.apache.org/guides/mini/guide-naming
 archivesBaseName = "eirairc"
 
 minecraft {
-    version = "1.7.2-10.12.0.1057"
+    version = "1.7.2-10.12.0.1065"
     assetDir = "eclipse/assets"
 }
 
